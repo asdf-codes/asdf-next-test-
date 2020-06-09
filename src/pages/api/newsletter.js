@@ -2,12 +2,12 @@ import axios from "axios";
 
 function getRequestParams(email) {
   // get env variables
-  const API_KEY = process.env.MAILCHIMP_API_KEY;
-  const LIST_ID = process.env.MAILCHIMP_LIST_ID;
+  const API_KEY = MAILCHIMP_API_KEY;
+  const LIST_ID = MAILCHIMP_LIST_ID;
   // mailchimp datacenter - mailchimp api keys always look like this:
   // fe4f064432e4684878063s83121e4971-us6
   // We need the us6 part
-  const DATACENTER = process.env.MAILCHIMP_API_KEY.split("-")[1];
+  const DATACENTER = MAILCHIMP_API_KEY.split("-")[1];
 
   const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
 
